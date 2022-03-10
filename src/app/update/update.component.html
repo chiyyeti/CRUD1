@@ -1,0 +1,26 @@
+<div>
+            
+    <form #edit="ngForm" (ngSubmit)="update(edit.value)" >
+       <div class="form-group">
+         <label for="productName">ProductName</label>
+         <input type="text"    ngModel  #productName="ngModel" name="productName"  [(ngModel)]="selectedProduct.productName" class="form-control"  id="productName" aria-describedby="emailHelp">
+         
+       </div>
+       <div class="form-group">
+         <label for="productPrice">ProductPrice</label>
+         <input type="number"  ngModel  #productPrice="ngModel" name="productPrice" [(ngModel)]="selectedProduct.productPrice"   class="form-control" id="productPrice">
+       </div>
+       <div class="form-group">
+         <label for="productImageURL">ProductImageURL</label>
+         <input type="text" ngModel  #productImageURL="ngModel" name="productImageURL" [(ngModel)]="selectedProduct.productImageURL"  class="form-control" id="productImageURL">
+       </div>
+       <div class="form-group">
+         <label for="productDescription">ProductDescription</label>
+         <input type="text" ngModel  #productDescription="ngModel" name="productDescription"  [(ngModel)]="selectedProduct.productDescription"  class="form-control" id="productDescription">
+       </div>
+       <button  type="submit">update</button>
+       
+     </form>
+
+     
+</div>

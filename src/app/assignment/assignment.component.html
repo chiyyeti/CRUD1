@@ -1,0 +1,62 @@
+<div class="col-md-6 ">
+ 
+
+ <form [formGroup]="regForm" (ngSubmit)="post()">
+    <!-- <div class="form-group">
+      <label for="id">ID</label>
+      <input type="text" class="form-control"  name="id"  formControlName="id" id="id" >
+    </div> -->
+    <div class="form-group">
+      <label for="productName">ProductName</label>
+      <input type="text" class="form-control"  name="productName"  formControlName="productName" id="productName" >
+    </div>
+    <div class="form-group">
+      <label for="productPrice">ProductPrice</label>
+      <input type="number" name="productPrice"  formControlName="productPrice" class="form-control" id="productPrice">
+    </div>
+    <div class="form-group">
+      <label for="productImageURL">ProductImageURL</label>
+      <input type="text" name="productImageURL"  formControlName="productImageURL" class="form-control" id="productImageURL">
+    </div>
+    <div class="form-group">
+      <label for="productDescription">ProductDescription</label>
+      <input type="text"   name="productDescription"  formControlName="productDescription" class="form-control" id="productDescription">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+  </form>
+
+
+</div>
+
+<div>
+    <table border=" 2px solid black">
+         <thead>
+             <tr>
+                 <th>ProductName</th>
+                 <th>ProductPrice</th>
+                 <th>ProductImageURL</th>
+                 <th>productDescription</th>
+                 <th>Action</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let x of data">
+                 <td>{{x.productName}}</td>
+                 <td>{{x.productPrice}}</td>
+                 <td><img [src]="x.productImageURL" alt="" height="200px" width="200px"></td>
+                 <td>{{x.productDescription}}</td>
+                 <td>
+                     <button  [routerLink]="['/update/',x._id]"  >Edit</button>
+                     <button (click)="delete(x._id)" type="submit ">Delete</button>
+                 </td>
+             </tr>
+         </tbody>
+    </table>
+
+
+
+
+  
+ 
+  </div>

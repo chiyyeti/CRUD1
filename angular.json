@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crud1"
+    }
+  },
+  "defaultProject": "crud1",
+  "cli": {
+    "analytics": false
+  }
 }
